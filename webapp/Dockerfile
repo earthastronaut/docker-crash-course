@@ -1,10 +1,11 @@
 FROM python:3
 
-WORKDIR /usr/scr/app
+WORKDIR /usr/src/app
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD python app.py
+ENTRYPOINT ["python"]
+CMD ["app.py"]
